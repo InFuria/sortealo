@@ -1,0 +1,18 @@
+[2021-11-16 14:58:03] local.ERROR: Command "ui" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"ui\" is not defined. at /home/fury/code/multisorteo/vendor/symfony/console/Application.php:682)
+[stacktrace]
+#0 /home/fury/code/multisorteo/vendor/symfony/console/Application.php(255): Symfony\\Component\\Console\\Application->find()
+#1 /home/fury/code/multisorteo/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/fury/code/multisorteo/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run()
+#3 /home/fury/code/multisorteo/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 /home/fury/code/multisorteo/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2021-11-16 14:59:53] local.ERROR: Command "ui" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"ui\" is not defined. at /home/fury/code/multisorteo/vendor/symfony/console/Application.php:682)
+[stacktrace]
+#0 /home/fury/code/multisorteo/vendor/symfony/console/Application.php(255): Symfony\\Component\\Console\\Application->find()
+#1 /home/fury/code/multisorteo/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/fury/code/multisorteo/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run()
+#3 /home/fury/code/multisorteo/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 /home/fury/code/multisorteo/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
