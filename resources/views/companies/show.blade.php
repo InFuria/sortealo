@@ -19,7 +19,8 @@
                 <div class="row">
                     <div class="mt-2 d-flex align-items-center">
                         <h1 class="ml-3 p-4 d-inline special-title">Detalle de Empresa</h1>
-                        <a class="btn btn-danger btn-md ml-auto" href="{{ route('reports.rafflesByCompany', ['company' => $company->id]) }}">Gestionar sorteos</a>
+                        <!-- reports.rafflesByCompany -->
+                        <a class="btn btn-danger btn-md ml-auto" href="{{ route('reports.index', ['company' => $company->id]) }}">Gestionar sorteos</a>
                     </div>
 
                     <div class="col-md-12 ">

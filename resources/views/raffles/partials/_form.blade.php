@@ -39,7 +39,7 @@
             <label for="status" class="col-md-4 h4 d-inline text-md-left"><p class="text-danger d-inline">* </p>Estado</label>
 
             <div class="col-md-12">
-                {!! Form::select('status', [0 => 'Pendiente', 1 => 'En curso', 2 => 'Terminado', 3 => 'Cancelado'], null, ['placeholder' => 'Seleccione una estado',"name" => "status", "class"=> "form-control form-control-lg", "required", "autofocus"]) !!}
+                {!! Form::select('status', [2 => 'Pendiente', 1 => 'En curso', 3 => 'Terminado', 4 => 'Cancelado'], null, ['placeholder' => 'Seleccione una estado',"name" => "status", "class"=> "form-control form-control-lg", "required", "autofocus"]) !!}
 
                 @error('status')
                     <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        @if(Auth::user()->role_id == 1)
+        @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
             <div class="form-group">
                 <label for="company_id" class="col-md-4 h4 d-inline text-md-left"><p class="text-danger d-inline">* </p>Empresa</label>
 
@@ -224,9 +224,9 @@
     <span class="col-12 text-md-left pl-0 h6 text-danger font-weight-bold"><i>* Campo obligatorio </i></span>
 
     <br>
-    @if(isset($raffle))
+    
     <span class="col-12 pt-5 text-md-left pl-0 h6 text-info font-weight-bold"><i>** Este campo ofrece la opcion de realizar el sorteo en un dia diferente al de cierre, si desea que el sorteo se realice al cierre solo seleccione el mismo dia y hora que el campo de "Fecha y hora de Cierre"</i></span>
-    @endif
+    
 </div>
 
 <div class="form-group row mt-5 mb-5">

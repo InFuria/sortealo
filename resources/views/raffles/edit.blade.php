@@ -81,10 +81,9 @@
         });
         $.datetimepicker.setLocale('es');
 
-
         $(date_time_picker[0]).val({!! json_encode(date("d/m/Y H:i:s",strtotime($raffle->start_date))) !!}); // Inicio de sorteo
         $(date_time_picker[1]).val({!! json_encode(date("d/m/Y H:i:s",strtotime($raffle->end_date))) !!}); // Cierre de sorteo
-        $(date_time_picker[2]).val({!! json_encode(date("d/m/Y H:i:s",strtotime($raffle->raffle_date))) !!}); // Cierre de sorteo
+        $(date_time_picker[2]).val({!! json_encode($raffle->raffle_date) == '"0000-00-00 00:00:00"' ? str_replace('-', '/', json_encode($raffle->raffle_date)) : json_encode(date("d/m/Y H:i:s",strtotime($raffle->raffle_date))) !!}); // Cierre de sorteo
 
         /* Manejo de imagenes */
         $(document).on('click', '.btn-delete-image', function(e) {

@@ -39,11 +39,11 @@ class CreateRafflesTable extends Migration
             $table->boolean('multiple_winners')->default(0);
             $table->integer('extra_winners')->default(0)->comment('Define la cantidad de ganadores en caso de ser un sorteo con multiples ganadores.');
             $table->text('description');
-            $table->bigInteger('type_id')->unsigned();
+            $table->bigInteger('type_id')->nullable();
             $table->foreign('type_id')->references('id')->on('raffle_types')->onDelete('cascade')->onUpdate('cascade');
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('raffle_categories')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('status')->default(0)->comment('0 => Pendiente, 1 => En curso, 2 => Terminado, 3 => Cancelado');
+            $table->integer('status')->default(1);
             $table->timestamp('start_date')->comment("Define el dia desde que sl sorteo el valido para registrarse");
             $table->timestamp('end_date')->comment("Define el dia hasta que es posible comprar tickets para participar");
             $table->timestamp('raffle_date')->comment("Define el dia y horario en que se realizara el sorteo");

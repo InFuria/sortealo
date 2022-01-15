@@ -23,7 +23,7 @@
                             </a>
                         </div>
 
-                        @if(Auth::user()->role_id == 1)
+                        @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
                         <div class="col-6 d-flex">
                             <a class="btn btn-danger btn-md ml-auto" href="{{ route('raffleCategories.index') }}">Gestionar categorias</a>
                             <!-- <a class="btn btn-danger btn-md mx-2" href="{{ route('raffleTypes.index') }}">Gestionar tipos de sorteo</a> -->
@@ -100,7 +100,7 @@
                                                     @endif
                                                 </td>
 
-                                                @if(Auth::user()->role_id == 1)
+                                                @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
                                                 <td class="text-center">
                                                     <a href="{{ route('companies.index') }}?search={{$raffle->company->name}}">{{ $raffle->company->name }}<a>
                                                 </td>
@@ -149,16 +149,16 @@ $(document).ready(function() {
                 $.each(data.data, function( index, value ) {
 
                     let status;
-                    if(value.status == 0){
+                    if(value.status == 2){
                         status = '<span class="badge badge-warning">Pendiente</span>'
                     }
                     if(value.status == 1){
                         status = '<span class="badge badge-success">En Curso</span>'
                     }
-                    if(value.status == 2){
+                    if(value.status == 3){
                         status = '<span class="badge badge-info text-white">Terminado</span>'
                     }
-                    if(value.status == 3){
+                    if(value.status == 4){
                         status = '<span class="badge badge-danger">Cancelado</span>'
                     }
                 

@@ -108,8 +108,25 @@ class RaffleController extends Controller
                 return redirect()->back()->with('toast_error', 'Debe seleccionar una cantidad de ganadores si selecciona la opcion "Multiples ganadores"');
             }
 
+            if($request->raffle_date == "0000/00/00 00:00:00"){
+                return redirect()->back()->with('toast_error', 'Debe definir una fecha de sorteo');
+            }
+
             $start_date = Carbon::createFromFormat('d/m/Y H:i:s', $request->start_date)->format('Y-m-d H:i:s');
             $end_date = Carbon::createFromFormat('d/m/Y H:i:s', $request->start_date)->format('Y-m-d H:i:s');
+            $raffle_date = Carbon::createFromFormat('d/m/Y H:i:s', $request->raffle_date)->format('Y-m-d H:i:s');
+
+            $company = null;
+            if(Auth()->user->role_id == 2){
+                $company = Auth::user()->company_id;
+
+            } else if(Auth::user()->role_id !== 2 && $request->company_id){
+                $company = $request->company_id;
+
+            } else {
+                
+                return redirect()->back()->with('toast_error', 'No se ha podido encontrar una empresa asociada al usuario o no selecciono la empresa a ;a cual pertenece el sorteo.');
+            }
 
             $raffle = new Raffle();
             $raffle->title              = $request->title;
@@ -123,8 +140,8 @@ class RaffleController extends Controller
             $raffle->extra_winners      = $request->extra_winners;
             $raffle->start_date         = $start_date;
             $raffle->end_date           = $end_date;
-            $raffle->raffle_date        = $request->raffle_date;
-            $raffle->company_id         = $request->company_id;
+            $raffle->raffle_date        = $raffle_date;
+            $raffle->company_id         = $company;
             $raffle->created_by         = Auth::user()->id;
             $raffle->save();
 
@@ -189,8 +206,25 @@ class RaffleController extends Controller
                 return redirect()->back()->with('toast_error', 'Debe seleccionar una cantidad de ganadores si selecciona la opcion "Multiples ganadores"');
             }
 
+            if($request->raffle_date == "0000/00/00 00:00:00"){
+                return redirect()->back()->with('toast_error', 'Debe definir una fecha de sorteo');
+            }
+
+            $company = null;
+            if(Auth::user()->role_id == 2){
+                $company = Auth::user()->company_id;
+
+            } else if(Auth::user()->role_id !== 2 && $request->company_id){
+                $company = $request->company_id;
+
+            } else {
+                
+                return redirect()->back()->with('toast_error', 'No se ha podido encontrar una empresa asociada al usuario o no selecciono la empresa a ;a cual pertenece el sorteo.');
+            }
+
             $start_date = Carbon::createFromFormat('d/m/Y H:i:s', $request->start_date)->format('Y-m-d H:i:s');
             $end_date = Carbon::createFromFormat('d/m/Y H:i:s', $request->end_date)->format('Y-m-d H:i:s');
+            $raffle_date = Carbon::createFromFormat('d/m/Y H:i:s', $request->raffle_date)->format('Y-m-d H:i:s');
 
             $raffle->title              = $request->title;
             $raffle->quantity_tickets   = $request->quantity_tickets;
@@ -203,8 +237,8 @@ class RaffleController extends Controller
             $raffle->extra_winners      = $request->extra_winners;
             $raffle->start_date         = $start_date;
             $raffle->end_date           = $end_date;
-            $raffle->raffle_date        = $request->raffle_date;
-            $raffle->company_id         = $request->company_id;
+            $raffle->raffle_date        = $raffle_date;
+            $raffle->company_id         = $company;
             $raffle->save();
 
             $images = $request->images;

@@ -24,6 +24,10 @@
         background-color: #ff6e40;
         color: white !important;
     }
+
+    .carousel{
+        min-height: 250px;
+    }
 </style>
 @endsection
 
@@ -117,10 +121,10 @@
                 @foreach($partialRaffles as $raffle)
                     <div class="card col col-custom mx-3 p-0">
                         <div id="carousel-{{ $raffle->id }}" class="carousel border-bottom border-dark slide" data-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel-inner h-100">
                                 @if(count($raffle->files) > 0)
                                     @foreach($raffle->files as $file)
-                                        <div class="carousel-item {{ $raffle->files[0]->id == $file->id ? 'active' : '' }}">
+                                        <div class="carousel-item h-100 {{ $raffle->files[0]->id == $file->id ? 'active' : '' }}">
                                             <img src="{{ asset('storage/raffles/' . $file->name) }}" class="d-block w-auto mx-auto" alt="{{ $raffle->title }}">
                                         </div>
                                     @endforeach

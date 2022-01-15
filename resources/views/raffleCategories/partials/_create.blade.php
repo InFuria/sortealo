@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="create-users-form" action="{{ route('raffleTypes.store') }}" method="POST">
+        <form id="create-users-form" action="{{ route('raffleCategories.store') }}" method="POST">
             @csrf
             
             <div class="row">

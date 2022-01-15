@@ -67,7 +67,8 @@
                         <label for="reason" class="col-md-4 h4 text-md-left"><p class="text-danger d-inline">* </p>Motivo de contacto</label>
 
                         <div class="col-md-12">
-                            {!! Form::select('reason', [0 => 'Consultas', 1 => 'Problemas con la pagina', 2 => 'Problemas con pagos', 3 => 'Unirse como empresa', 4 => 'Otros problemas tecnicos'], \Request::has('unirse') == true ? 3 : null, ['placeholder' => 'Seleccione un motivo',"name" => "reason", "class"=> "form-control form-control-lg", "required", "autofocus"]) !!}
+                            {!! Form::select('reason', ['Consultas' => 'Consultas', 'Problemas con la pagina' => 'Problemas con la pagina', 'Problemas con pagos' => 'Problemas con pagos', 'Unirse como empresa' => 'Unirse como empresa', 'Otros problemas tecnicos' => 'Otros problemas tecnicos'], 
+                                \Request::has('unirse') == true ? 3 : null, ['placeholder' => 'Seleccione un motivo',"name" => "reason", "class"=> "form-control form-control-lg", "required", "autofocus"]) !!}
 
                             @error('reason')
                                 <span class="invalid-feedback" role="alert">

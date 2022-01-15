@@ -15,8 +15,8 @@
             @endif
             @if(Auth::user()->role_id !== 2)
             <li class="nav-item sidebar-link">
-                <a href="{{ route('companies.index') }}" class="nav-link p-3 py-5 {{ \Route::currentRouteName() == 'companies.index' ? 'active' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Compañias">
-                    <i class="far fa-building fa-2x" title="Compañias"></i>
+                <a href="{{ route('companies.index') }}" class="nav-link p-3 py-5 {{ \Route::currentRouteName() == 'companies.index' ? 'active' : '' }}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Empresas">
+                    <i class="far fa-building fa-2x" title="Empresas"></i>
                 </a>
             </li>
             @endif

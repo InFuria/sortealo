@@ -307,19 +307,19 @@
                 <div class="collapse navbar-collapse h4" id="navbarNavDropdown">
                     <ul class="navbar-nav pt-3 d-flex justify-content-between">
                         <li class="nav-item px-4 {{ \Request::route()->getName() == 'home' ? 'active' : '' }}">
-                            <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                            <a class="nav-link rounded" href="/">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <!-- <li class="nav-item px-4">
                             <a class="nav-link" href="{{ route('home') }}">Sorteos</a>
                         </li> -->
                         <li class="nav-item px-4 {{ \Request::route()->getName() == 'raffles.results' ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('raffles.results') }}">Resultados</a>
+                            <a class="nav-link rounded" href="{{ route('raffles.results') }}">Resultados</a>
                         </li>
                         <li class="nav-item px-4 {{ \Request::route()->getName() == 'faqs.index' ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('faqs.index') }}">FAQ</a>
+                            <a class="nav-link rounded" href="{{ route('faqs.index') }}">FAQ</a>
                         </li>
                         <li class="nav-item px-4 {{ \Request::route()->getName() == 'contact.index' ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('contact.index') }}">Contacto</a>
+                            <a class="nav-link rounded" href="{{ route('contact.index') }}">Contacto</a>
                         </li>
                         @guest
                         <li class="nav-item {{ \Request::route()->getName() == 'login' ? 'active' : '' }}" style="margin-right: 0;">
@@ -382,7 +382,7 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle rounded" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
