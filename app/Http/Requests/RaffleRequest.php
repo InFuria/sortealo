@@ -34,7 +34,7 @@ class RaffleRequest extends FormRequest
             'start_date'        => 'required',
             'raffle_date'       => 'required',
             'end_date'          => 'required',
-            'company_id'        => 'required|numeric|exists:companies,id'
+            //'company_id'        => 'sometimes|numeric|exists:companies,id'
         ];
     }
 }

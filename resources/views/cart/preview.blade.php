@@ -103,7 +103,7 @@ table {
                                         <tr class="cart-subtotal">
                                             <th>Total Tickets</th>
                                             <td data-title="Subtotal">
-                                                <span class="ecommercepro-Price-amount amount" id="cart-subtotal">13 Unidades</span>
+                                                <span class="ecommercepro-Price-amount amount" id="cart-subtotal">{{ $quantity }}</span>
                                             </td>
                                         </tr>
                                         <tr class="cart-subtotal">
@@ -124,7 +124,7 @@ table {
                                             <th>Total</th>
                                             <td data-title="Total">
                                                 <strong>
-                                                    <span class="ecommercepro-Price-amount amount" id="cart-total">USD. 115.080</span>
+                                                    <span class="ecommercepro-Price-amount amount" id="cart-total">{{ $total }}</span>
                                                 </strong>
                                             </td>
                                         </tr>

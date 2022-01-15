@@ -176,7 +176,7 @@ class UserController extends Controller
     }
 
 
-    public function destroy($id)
+    /* public function destroy($id)
     {
         try{
             
@@ -186,7 +186,7 @@ class UserController extends Controller
             Log::error('UserController::destroy - ' . $e->getMessage());
             return redirect()->back()->with("toast_error", "Ha ocurrido un error al eliminar al usuario");
         }
-    }
+    } */
 
     public function status(User $user)
     {

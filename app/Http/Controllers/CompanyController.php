@@ -177,7 +177,7 @@ class CompanyController extends Controller
     }
 
 
-    public function destroy(Company $company)
+    /* public function destroy(Company $company)
     {
         try{
             
@@ -187,7 +187,7 @@ class CompanyController extends Controller
             Log::error('CompanyController::destroy - ' . $e->getMessage());
             return redirect()->back()->with("toast_error", "Ha ocurrido un error al eliminar la empresa");
         }
-    }
+    } */
 
     public function status(Company $company)
     {

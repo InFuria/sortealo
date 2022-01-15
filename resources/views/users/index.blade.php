@@ -50,7 +50,7 @@
                                             <tr class="candidates-list">
                                                 <td class="title">
                                                 <div class="thumb">
-                                                    @if(isset($user->photo))
+                                                    @if($user->photo !== "" && $user->photo !== null)
                                                         <img class="img-user ml-3" src="{{ asset('storage/users/' . $user->photo)}}" alt="">
                                                     @else
                                                         <img class="img-user ml-3" src="{{ asset('storage/users/default.png')}}" alt="">
@@ -95,8 +95,8 @@
                                                         <li class="p-1"><a href="{{ route('users.status', ['user' => $user->id]) }}" class="text-danger btn-status" title="Deshabilitar usuario"><i class="fas fa-eye-slash"></i></a></li>
                                                     @endif
                                                     <li class="p-1"><a href="{{ route('users.edit', ['user'=> $user->id]) }}" class="text-info" data-toggle="tooltip" title="Editar usuario" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a></li>
-                                                    <li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar usuario" data-id="{{ $user->id }}" data-username="{{ $user->username }}"><i class="far fa-trash-alt"></i></a></li>
-                                                </ul>
+<!--                                                     <li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar usuario" data-id="{{ $user->id }}" data-username="{{ $user->username }}"><i class="far fa-trash-alt"></i></a></li>
+ -->                                                </ul>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -163,7 +163,7 @@ $(document).ready(function() {
                                 changeStatus +
                                 
                                 '<li class="p-1"><a href="'+ editRoute +'" class="text-info" data-toggle="tooltip" title="Editar usuario" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a></li>'+
-                                '<li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar usuario" data-id="'+ value.id +'" data-username="'+ value.username +'"><i class="far fa-trash-alt"></i></a></li>'+
+                                /* '<li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar usuario" data-id="'+ value.id +'" data-username="'+ value.username +'"><i class="far fa-trash-alt"></i></a></li>'+ */
                             '</ul></td></tr>'
                     );
 

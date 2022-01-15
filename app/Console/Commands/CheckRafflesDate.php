@@ -51,7 +51,7 @@ class CheckRafflesDate extends Command
                 $output->writeln('<comment>-> Iniciando procesamiento...</comment>');
                 $output->writeln('');
 
-                $raffles = Raffle::where('status', 1)->where('raffle_date', '>', Carbon::now()->toDateTimeString())->where('raffle_date', "<", Carbon::now()->addMinutes(30)->toDateTimeString())->get(); // Se define 1 minuto extra para que no falte algun sorteo definido en el minuto justo
+                $raffles = Raffle::where('status', 1)->where('raffle_date', '>', Carbon::now()->toDateTimeString())->where('raffle_date', "<", Carbon::now()->addMinutes(6)->toDateTimeString())->get(); // Se define 1 minuto extra para que no falte algun sorteo definido en el minuto justo
         
                 $listRaffles = [];
                 foreach($raffles as $raffle){

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Compañias')
+@section('title', 'Empresas')
 
 @section('content')
 <div class="container-fluid">
@@ -100,8 +100,8 @@
                                                     @endif
                                                     <li class="p-1"><a href="{{ route('companies.show', ['company'=> $company->id]) }}" class="text-info" data-toggle="tooltip" title="Detalle empresa" data-original-title="Detalle"><i class="fas fa-info-circle"></i></a></li>
                                                     <li class="p-1"><a href="{{ route('companies.edit', ['company'=> $company->id]) }}" class="text-success" data-toggle="tooltip" title="Editar empresa" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a></li>
-                                                    <li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar empresa" data-id="{{ $company->id }}" data-name="{{ $company->name }}"><i class="far fa-trash-alt"></i></a></li>
-                                                </ul>
+<!--                                                     <li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar empresa" data-id="{{ $company->id }}" data-name="{{ $company->name }}"><i class="far fa-trash-alt"></i></a></li>
+ -->                                                </ul>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -169,7 +169,7 @@ $(document).ready(function() {
                                 changeStatus+
                                 '<li class="p-1"><a href="'+ show +'" class="text-info" data-toggle="tooltip" title="Detalle empresa" data-original-title="Detalle"><i class="fas fa-info-circle"></i></a></li>'+
                                 '<li class="p-1"><a href="' + edit + '" class="text-success" data-toggle="tooltip" title="Editar" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a></li>'+
-                                '<li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar empresa" data-id="' + value.id + '" data-name="' + value.name + '"><i class="far fa-trash-alt"></i></a></li>'+
+                                /* '<li class="p-1"><a href="#" class="text-danger btn-delete" title="Eliminar empresa" data-id="' + value.id + '" data-name="' + value.name + '"><i class="far fa-trash-alt"></i></a></li>'+ */
                                 '</ul></td></tr>');
 
                         $('#companies-table > tbody').append(tr);                       

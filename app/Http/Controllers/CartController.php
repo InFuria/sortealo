@@ -139,7 +139,13 @@ class CartController extends Controller
             $idCart = session()->getId();
             $details = Session::get($idCart.'-');
 
-            return view('cart.preview', compact('details'));
+            $quantity = 0; $total = 0;
+            foreach($details as $detail){
+                $quantity = $quantity + $detail['quantity'];
+                $total = $total + $detail['subTotal'];
+            }
+            
+            return view('cart.preview', compact('details', 'quantity', 'total'));
 
         } catch(\Throwable $e){
             Log::error('CartController::preview - ' . $e->getMessage());
