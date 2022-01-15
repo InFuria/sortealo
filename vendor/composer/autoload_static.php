@@ -5445,4 +5445,3 @@ class ComposerStaticInit5152c1406cd1e5d9757506a07c2477e5
 
         }, null, ClassLoader::class);
     }
-}
